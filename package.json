@@ -1,0 +1,29 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server",
+    "client:install": "npm install --prefix client",
+    "server:install": "npm install --prefix server",
+    "client": "npm start --prefix client",
+    "server": "nodemon server.js --prefix server",
+    "project:install": "concurrently \"npm run client:install\" \"npm run server:install\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm install --prefix server && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddevtk/d-computer.git"
+  },
+  "author": "ddevtk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ddevtk/d-computer/issues"
+  },
+  "homepage": "https://github.com/ddevtk/d-computer#readme",
+  "dependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
