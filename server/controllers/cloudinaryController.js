@@ -1,11 +1,11 @@
 const cloudinary = require('cloudinary').v2;
 const dotenv = require('dotenv');
-dotenv.config({ path: __dirname + '../../../server/.env' });
+dotenv.config({ path: __dirname + '../.env' });
 
 cloudinary.config({
-  api_key: process.env.CLOUDINARY_API_KEY,
-  cloud_name: process.env.CLOUDINARY_NAME,
-  api_secret: process.env.CLOUDINARY_SECRET_KEY,
+  api_key: '279442318473675',
+  cloud_name: 'dpu2sjy46',
+  api_secret: 'uyqEucqc3_khxipLI3zRvYKrxAw',
 });
 
 exports.upload = async (req, res) => {

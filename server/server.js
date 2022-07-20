@@ -17,8 +17,7 @@ const stripeRoute = require('./routes/stripeRoute');
 const userRoute = require('./routes/userRoute.js');
 const orderRoute = require('./routes/orderRoute.js');
 
-dotenv.config({ path: __dirname + '../../server/.env' });
-
+dotenv.config({ path: __dirname + '/.env' });
 // App
 const app = express();
 
