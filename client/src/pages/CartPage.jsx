@@ -25,15 +25,12 @@ const CartPage = () => {
       <div className='header-page'>
         <h1>Giỏ hàng của bạn</h1>
         <p className='mb-4'>
-          Có <span style={{ fontWeight: 'bold' }}>{sl} sản phẩm</span> trong giỏ
-          hàng
+          Có <span style={{ fontWeight: 'bold' }}>{sl} sản phẩm</span> trong giỏ hàng
         </p>
       </div>
       <Row>
         <Col lg={16} md={16} sm={24} xs={24}>
-          {cart.length === 0 && (
-            <div className='mt-2'>Giỏ hàng của bạn đang trống</div>
-          )}
+          {cart.length === 0 && <div className='mt-2'>Giỏ hàng của bạn đang trống</div>}
         </Col>
         <Col lg={16} md={16} sm={24} xs={24}>
           {cart.length !== 0 &&
@@ -41,12 +38,7 @@ const CartPage = () => {
               return <CartItem key={item._id} item={item} />;
             })}
         </Col>
-        <Col
-          lg={{ span: 7, offset: 1 }}
-          md={{ span: 7, offset: 1 }}
-          sm={24}
-          xs={24}
-        >
+        <Col lg={{ span: 7, offset: 1 }} md={{ span: 7, offset: 1 }} sm={24} xs={24}>
           <div className='cart-order-total'>
             <div className='cart-order-total__item'>
               <h4>Thông tin đơn hàng</h4>
@@ -71,19 +63,7 @@ const CartPage = () => {
             <div className='cart-order-total__item'>
               {cookie.user ? (
                 <>
-                  <Button size='large' block type='primary' danger>
-                    <Link to='/checkout' state={{ paymentMethod: 'online' }}>
-                      {' '}
-                      Thanh toán trưc tuyến
-                    </Link>
-                  </Button>
-                  <Button
-                    className='mt-2'
-                    size='large'
-                    block
-                    type='primary'
-                    danger
-                  >
+                  <Button className='mt-2' size='large' block type='primary' danger>
                     <Link to='/checkout' state={{ paymentMethod: 'COD' }}>
                       Thanh toán khi nhận hàng
                     </Link>
